@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rex Health & Fitness</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-blue-800 text-white p-4 flex justify-between">
+    <div class="text-2xl font-bold">Rex</div>
+    <ul class="flex space-x-4">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-gray-100 p-10 text-center">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Rex Health & Fitness</h1>
+    <p class="text-lg">Empowering your journey to a healthier life.</p>
+    <div class="mt-6">
+      <img src="/path-to-slider-image.jpg" alt="Slider" class="w-full h-64 object-cover rounded-xl" />
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="p-10">
+    <h2 class="text-3xl font-bold mb-4">About Us</h2>
+    <p>Rex is dedicated to improving your health and fitness through personalized support, expert knowledge, and clinically guided practices.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="p-10 bg-gray-50">
+    <h2 class="text-3xl font-bold mb-6">Our Services</h2>
+    <ul class="grid grid-cols-2 gap-6">
+      <li>🏋️‍♀️ Workout Plans</li>
+      <li>🥗 Meal Plans</li>
+      <li>🧮 BMI Calculator</li>
+      <li>🩺 Personal Consultation</li>
+    </ul>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="p-10">
+    <h2 class="text-3xl font-bold mb-4">Latest Blog Posts</h2>
+    <p class="text-gray-600">Coming soon: expert articles on fitness, nutrition, and wellness.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="p-10 bg-gray-100">
+    <h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+    <blockquote class="border-l-4 border-blue-600 pl-4 italic">“Rex changed my life! The plans were easy to follow and very effective.”</blockquote>
+    <p class="text-sm text-gray-500 mt-2">— Happy Client</p>
+  </section>
+
+  <!-- BMI Calculator -->
+  <section class="p-10" id="bmi">
+    <h2 class="text-3xl font-bold mb-4">BMI Calculator</h2>
+    <div class="mb-4">
+      <input id="height" type="number" placeholder="Height (cm)" class="border p-2 mr-2" />
+      <input id="weight" type="number" placeholder="Weight (kg)" class="border p-2 mr-2" />
+      <button onclick="calculateBMI()" class="bg-blue-800 text-white p-2 rounded">Calculate</button>
+    </div>
+    <p id="bmi-result" class="font-semibold"></p>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="p-10 bg-blue-50">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <form class="grid gap-4 max-w-md">
+      <input type="text" placeholder="Name" class="border p-2" />
+      <input type="email" placeholder="Email" class="border p-2" />
+      <textarea placeholder="Message" class="border p-2"></textarea>
+      <button class="bg-blue-800 text-white p-2 rounded">Send</button>
+    </form>
+    <p class="mt-4">Or call us directly: <strong>+90 548 867 0091</strong></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white text-center p-4">
+    &copy; 2025 Rex Health & Fitness. All rights reserved.
+  </footer>
+
+  <script>
+    function calculateBMI() {
+      const height = parseFloat(document.getElementById('height').value) / 100;
+      const weight = parseFloat(document.getElementById('weight').value);
+      if (!height || !weight) {
+        document.getElementById('bmi-result').textContent = 'Please enter valid numbers.';
+        return;
+      }
+      const bmi = (weight / (height * height)).toFixed(2);
+      document.getElementById('bmi-result').textContent = `Your BMI is ${bmi}`;
+    }
+  </script>
+</body>
+</html>
